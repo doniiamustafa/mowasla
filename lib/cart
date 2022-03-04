@@ -1,0 +1,58 @@
+import 'package:flutter/cupertino.dart';
+
+class CartItem {
+  String id;
+  String title;
+  double price;
+  int quantity;
+
+  CartItem({
+    @required this.id,
+    @required this.title,
+    @required this.price,
+    @required this.quantity,
+  });
+}
+
+class Cart extends ChangeNotifier {
+  Map<String, CartItem> _items = {};
+
+  Map<String, CartItem> get item {
+    return {..._items};
+  }
+
+  void addItem(String prodId, String title, double price) {
+    if (_items.containsKey(prodId)) {
+      _items.update(prodId, (existingItem) =>
+          CartItem(id: existingItem.id,
+              title: existingItem.title,
+              price: existingItem.price,
+              quantity: existingItem.quantity + 1),);
+    } else {
+      _items.putIfAbsent(prodId,
+              () =>
+              CartItem(id: prodId, title: title, price: price, quantity: 1));
+    }
+    notifyListeners();
+  }
+
+  int get itemCount{
+    return _items.length;
+  }
+
+  double get totalCost{
+    var total = 0.0;
+    _items.forEach((key, cartItem) {
+      total += cartItem.price * cartItem.quantity;
+    });
+    return total;
+  }
+void removeItem(String id){  // remove item which has id... (key not value)
+    _items.remove(id);
+    notifyListeners();
+}
+void clearCart(){
+    _items = {};
+    notifyListeners();
+}
+}

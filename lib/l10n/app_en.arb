@@ -1,0 +1,12 @@
+{
+    "signin": "Sign in",
+    "email" : "Email",
+    "password" : "Password",
+    "google" : "Google",
+    "facebook" : "Facebook",
+    "signup" : "Sign Up",
+    "rememberme": "Remember Me",
+    "forgotPass": "Forgot password?",
+    "signInWith": "Or sign in with",
+    "haveNoAccount":"Don’t have an account?"
+}

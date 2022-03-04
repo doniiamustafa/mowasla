@@ -1,0 +1,12 @@
+{
+    "email" : " عنوان البريد الالكتروني",
+    "signIn": "تسجبل دخول",
+    "password" : "كلمه السر",
+    "google" : "Google",
+    "facebook" : "Facebook",
+    "signup" : "انشاء حساب جديد",
+    "rememberme": "تذكرني",
+    "forgotPass": "نسيت كلمه السر",
+    "signInWith": " يمكنك الدخول ب ",
+    "haveNoAccount":"ليس لديك حساب ؟"
+}
